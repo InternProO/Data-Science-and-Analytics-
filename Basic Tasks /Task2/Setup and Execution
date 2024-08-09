@@ -1,0 +1,6 @@
+1. Install Required Libraries
+You'll need to install the following libraries if you haven't already: 
+command : pip install pandas numpy scikit-learn matplotlib
+
+
+2. Import Libraries
