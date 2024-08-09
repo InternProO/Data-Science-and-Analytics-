@@ -1,0 +1,4 @@
+1. Install all necessary Libraries : 
+command : pip install requests beautifulsoup4 pandas textblob vaderSentiment tweepy matplotlib seaborn
+
+
