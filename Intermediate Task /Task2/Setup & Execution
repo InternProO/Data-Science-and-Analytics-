@@ -1,0 +1,37 @@
+To build a real-time data streaming pipeline, you can use Apache Kafka and Python for processing IoT data.
+
+Step 1: Setting Up Kafka
+Install and set up Kafka to handle streaming data.
+
+Step 2: Producer (Simulating IoT Devices)
+Simulate data generation from IoT devices.
+
+(from kafka import KafkaProducer
+import json
+import time
+import random
+
+producer = KafkaProducer(bootstrap_servers='localhost:9092', value_serializer=lambda v: json.dumps(v).encode('utf-8'))
+
+while True:
+    data = {'temperature': random.uniform(20.0, 25.0), 'humidity': random.uniform(30.0, 50.0)}
+    producer.send('iot_data', data)
+    time.sleep(1)
+)
+
+Step 3: Consumer (Processing Data)
+Consume the data and perform real-time analysis.
+
+(from kafka import KafkaConsumer
+import json
+
+consumer = KafkaConsumer('iot_data', bootstrap_servers='localhost:9092', value_deserializer=lambda x: json.loads(x.decode('utf-8')))
+
+for message in consumer:
+    data = message.value
+    # Perform real-time analysis here
+    print(f"Received data: {data}")
+)
+
+Step 4: Visualization
+You can integrate real-time visualization using libraries like Plotly or Dash.
