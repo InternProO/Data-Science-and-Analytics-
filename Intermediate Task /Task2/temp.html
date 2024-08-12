@@ -1,0 +1,11 @@
+<!-- index.html -->
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+</form>
+
+<!-- analysis.html -->
+{% for table in tables %}
+    <h2>Analysis Results</h2>
+    {{ table | safe }}
+{% endfor %}
